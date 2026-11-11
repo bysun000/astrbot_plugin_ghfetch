@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GitHub 下载加速 · 参数设置</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./app.js"></script>
+  </head>
+  <body>
+    <div class="page">
+      <header class="hero">
+        <div class="hero-text">
+          <h1>GitHub 下载加速 · 参数设置</h1>
+          <p class="sub">发 Release 链接或项目名，服务器多线程抓下来直接回传文件喵</p>
+        </div>
+        <div class="status-panel" id="statusPanel">
+          <span class="chip" id="aria2Chip">aria2 检测中…</span>
+          <span class="chip" id="portChip">回传服务 …</span>
+          <span class="chip" id="leftoverChip">残留 …</span>
+        </div>
+      </header>
+
+      <div class="toolbar">
+        <button class="btn subtle" id="reloadBtn" type="button">重新读取</button>
+        <button class="btn subtle" id="defaultsBtn" type="button">恢复默认值</button>
+        <span class="dirty-tip" id="dirtyTip">尚未修改</span>
+      </div>
+
+      <main id="groups" class="groups">
+        <div class="loading">正在读取配置…</div>
+      </main>
+
+      <div class="savebar">
+        <div class="save-tip" id="saveTip"></div>
+        <button class="btn primary" id="saveBtn" type="button" disabled>保存配置</button>
+      </div>
+    </div>
+  </body>
+</html>
