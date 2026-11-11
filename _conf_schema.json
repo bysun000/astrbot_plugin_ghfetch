@@ -1,0 +1,122 @@
+{
+  "enabled": {
+    "type": "bool",
+    "default": true,
+    "description": "总开关：关闭后不再响应任何链接"
+  },
+  "aria2_path": {
+    "type": "string",
+    "default": "aria2c",
+    "description": "aria2c 可执行文件路径，留默认会自动查找 /usr/bin/aria2c"
+  },
+  "connections": {
+    "type": "int",
+    "default": 16,
+    "description": "aria2 单文件并发连接数（-x/-s）"
+  },
+  "max_size_mb": {
+    "type": "int",
+    "default": 500,
+    "description": "单个文件大小上限（MB），超过直接拒绝并给直链"
+  },
+  "mirrors": {
+    "type": "list",
+    "default": [
+      "",
+      "https://ghfast.top/",
+      "https://gh-proxy.com/"
+    ],
+    "description": "下载源顺序：空字符串代表 GitHub 直连，可追加镜像前缀（如 https://ghfast.top/），按顺序逐个尝试"
+  },
+  "max_concurrent": {
+    "type": "int",
+    "default": 2,
+    "description": "同时进行的下载任务数上限"
+  },
+  "http_port": {
+    "type": "int",
+    "default": 8899,
+    "description": "临时文件回传服务的监听端口（容器内网，供 SnowLuma 拉取）"
+  },
+  "callback_host": {
+    "type": "string",
+    "default": "",
+    "description": "回传 URL 使用的主机名/IP，留空自动探测本机容器 IP"
+  },
+  "clean_delay": {
+    "type": "int",
+    "default": 45,
+    "description": "发送成功后延迟多少秒删除服务器上的下载残留"
+  },
+  "win_prefer": {
+    "type": "bool",
+    "default": true,
+    "description": "用户只说项目名时，优先挑 Windows 资产（群友多是 Windows）"
+  },
+  "ask_on_ambiguous": {
+    "type": "bool",
+    "default": true,
+    "description": "搜到的项目没有完全同名时，列出候选让用户选（关掉则直接取星标最高的那个）"
+  },
+  "search_candidates": {
+    "type": "int",
+    "default": 3,
+    "description": "按项目名搜索时最多列出几个候选仓库"
+  },
+  "asset_candidates": {
+    "type": "int",
+    "default": 8,
+    "description": "一个 Release 里无法自动判断平台时，最多列出几个资产供选择"
+  },
+  "aliases": {
+    "type": "string",
+    "default": "",
+    "description": "自定义别名，格式 name=owner/repo，多项用逗号分隔，如 vscode=microsoft/vscode,clash=MetaCubeX/mihomo"
+  },
+  "pending_ttl": {
+    "type": "int",
+    "default": 180,
+    "description": "多文件 Release 选择序号的等待秒数"
+  },
+  "github_token": {
+    "type": "string",
+    "default": "",
+    "description": "可选：GitHub Personal Access Token，用于提高 API 限额（解析 release 页面链接时需要）"
+  },
+  "allow_group": {
+    "type": "bool",
+    "default": true,
+    "description": "允许群聊使用"
+  },
+  "allow_private": {
+    "type": "bool",
+    "default": true,
+    "description": "允许私聊使用"
+  },
+  "whitelist_groups": {
+    "type": "list",
+    "default": [],
+    "description": "群白名单（群号），留空表示不限制"
+  },
+  "repo_intro": {
+    "type": "bool",
+    "default": true,
+    "description": "发裸仓库主页链接时，先抓仓库简介并发一条消息（含一句话总结）"
+  },
+  "repo_intro_llm": {
+    "type": "bool",
+    "default": true,
+    "description": "简介里的「一句话总结」是否让模型来写（关掉则只发简介/语言/star/标签）"
+  },
+  "repo_intro_readme_chars": {
+    "type": "int",
+    "default": 1500,
+    "description": "喂给模型做总结的 README 摘录字数上限（越大越准、也越费 token）"
+  },
+  "info_cache_ttl": {
+    "type": "int",
+    "default": 900,
+    "description": "仓库信息与简介的缓存秒数，避免重复消耗 GitHub API 配额"
+  }
+}
+Enter file contents here
