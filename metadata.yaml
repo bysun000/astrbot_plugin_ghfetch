@@ -1,0 +1,16 @@
+name: "astrbot_plugin_ghfetch"
+display_name: "GitHub Release 加速下载"
+short_desc: "丢个 GitHub 链接或项目名，服务器 aria2 加速抓包并直接回传文件"
+author: "Marvis"
+version: "v1.2.0"
+desc: "发 Release 链接 或 直接说项目名 → 多平台时列菜单回复序号自选（可回 win/安卓/mac/linux 只看某平台）→ 服务器 aria2 多线程加速下载 → 回传文件给用户 → 自动清理服务器残留；仓库没有 Release 时先问一句要不要源码 zip，确认了才发；发裸仓库主页链接会先抓仓库简介和 README 并让机器人一句话总结发过来"
+repo: "https://github.com/bysun000/astrbot_plugin_ghfetch"
+astrbot_version: ">=4.24.0"
+support_platforms:
+  - aiocqhttp
+social_link: ""
+tags:
+  - 下载
+  - GitHub
+  - aria2
+Enter file contents here
